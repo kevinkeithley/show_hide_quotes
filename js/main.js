@@ -6,8 +6,8 @@ document.getElementById('blur-text-button').addEventListener('click', function (
     const items = document.querySelectorAll('.item')
     for (let i = 0; i < items.length; i++) {
       items[i].firstElementChild.classList.add('blurry-text')
-      var btn = document.createElement('BUTTON')
-      btn.innerHTML = 'Show/Hide'
+      var btn = document.createElement('SPAN')
+      btn.setAttribute('class', 'far fa-eye')
       btn.setAttribute('id', 'btn_'.concat([i]))
       btn.setAttribute('onClick', 'toggleClick(this)')
       items[i].appendChild(btn)
@@ -26,4 +26,6 @@ document.getElementById('blur-text-button').addEventListener('click', function (
 })
 function toggleClick (id) {
   id.parentElement.firstElementChild.classList.toggle('blurry-text')
+  id.classList.toggle('fa-eye')
+  id.classList.toggle('fa-eye-slash')
 }
